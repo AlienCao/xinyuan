@@ -103,6 +103,16 @@ body{
 	  margin: 0 auto;
 }
 ol li{margin-left:10px;}
+.mengceng {
+  display:none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 960px) and (min-width: 320px){
 .topclass{background-size:100% 60%;}
 }
@@ -137,7 +147,7 @@ p{
         </div>
         <div class="caption">
           <div class="title">1602</div>
-          <div class="title ling" id="1604">领取心愿</div>
+          <div class="title ling" id="1602">领取心愿</div>
         </div>
       </div>
 <div class="thumbnail">
@@ -146,7 +156,7 @@ p{
         </div>
         <div class="caption">
           <div class="title">1603</div>
-          <div class="title ling" id="1605">领取心愿</div>
+          <div class="title ling" id="1603">领取心愿</div>
         </div>
       </div>
 <div class="thumbnail">
@@ -155,7 +165,7 @@ p{
         </div>
         <div class="caption">
           <div class="title">1604</div>
-          <div class="title ling" id="1606">领取心愿</div>
+          <div class="title ling" id="1604">领取心愿</div>
         </div>
       </div>
 <div class="thumbnail">
@@ -164,7 +174,7 @@ p{
         </div>
         <div class="caption">
           <div class="title">1605</div>
-          <div class="title ling" id="1607">领取心愿</div>
+          <div class="title ling" id="1605">领取心愿</div>
         </div>
       </div>
 <div class="thumbnail">
@@ -173,7 +183,7 @@ p{
         </div>
         <div class="caption">
           <div class="title">1606</div>
-          <div class="title ling" id="1608">领取心愿</div>
+          <div class="title ling" id="1606">领取心愿</div>
         </div>
       </div>
 <div class="thumbnail">
@@ -194,48 +204,47 @@ p{
         </div>
       </div>
     </div>
-    <div id="lingForm" style="display: none;width: 90%;margin: auto;position: fixed;left: 0;right: 0;top: 30%;">
+    <div class="mengceng" style="z-index:999;"></div>
+    <div id="lingForm" style="display: none;width: 90%;margin: auto;position: fixed;left: 0;right: 0;top: 30%;z-index: 1000;">
       <input type="hidden" value="" id="submitid"/>
       <form id='form' name='form' enctype='multipart/form-data' method='post' action='http://ide.jx09.com/module/form/content/?mode=&action=post&id=430'>
-    <input type='hidden' value='qb5px5VWS6' name='verify' />
-<div id="main">
-  <p>您的姓名：（必填）</p>
-  <input type="text" name='G-1815' id='G-1040'></input>
-  <p>您的电话：（必填）</p>
-  <input type="text" name='G-1816' id='G-1040'></input>
-  <div id="group-1817" class="radiostyle">
-      <p>
-          信息来源 *
-      </p>
-      <ol style = 'display:inline-flex;'>
-          <li>
-              <input type='radio' class='radio' name='G-1817' value='947' />嘉论
-          </li>
-          <li>
-              <input type='radio' class='radio' name='G-1817' value='948' />19楼
-          </li>
-          <li>
-              <input type='radio' class='radio' name='G-1817' value='949' />九区
-          </li>
-          <li>
-              <input type='radio' class='radio' name='G-1817' value='947' />论坛甲
-          </li>
-          <li>
-              <input type='radio' class='radio' name='G-1817' value='948' />论坛乙
-          </li>
-          <li>
-              <input type='radio' class='radio' name='G-1817' value='949' />论坛丙
-          </li>
-      </ol>
-  </div>
-  <div id='send'>
-      <input type="submit" value="提交表单" class="submitstyle"></input>
-  </div>
-</div>
-</form>
+          <input type='hidden' value='qb5px5VWS6' name='verify' />
+          <div id="main">
+              <p>您的姓名：（必填）</p>
+              <input type="text" name='G-1815' id='G-1040'></input>
+              <p>您的电话：（必填）</p>
+              <input type="text" name='G-1816' id='G-1040'></input>
+              <div id="group-1817" class="radiostyle">
+                  <p>
+                      信息来源 *
+                  </p>
+                  <ol style = 'display:inline-flex;'>
+                      <li>
+                          <input type='radio' class='radio' name='G-1817' value='947' />嘉论
+                      </li>
+                      <li>
+                          <input type='radio' class='radio' name='G-1817' value='948' />19楼
+                      </li>
+                      <li>
+                          <input type='radio' class='radio' name='G-1817' value='949' />九区
+                      </li>
+                      <li>
+                          <input type='radio' class='radio' name='G-1817' value='947' />论坛甲
+                      </li>
+                      <li>
+                          <input type='radio' class='radio' name='G-1817' value='948' />论坛乙
+                      </li>
+                      <li>
+                          <input type='radio' class='radio' name='G-1817' value='949' />论坛丙
+                      </li>
+                  </ol>
+              </div>
+              <div id='send'>
+                  <input type="submit" value="提交表单" class="submitstyle"></input>
+              </div>
+          </div>
+      </form>
     </div>
-  
-
   <script>
     $(function() {
       var ghostNode = $('#masonry_ghost').find('.thumbnail'), i, ghostIndexArray = [];
@@ -264,9 +273,14 @@ p{
         return newItemContainer.find('.thumbnail');
       }
       $(".ling").click(function(){
-        alert('123');
+        $("#lingForm").css("display","block");
+        $(".mengceng").css("display","block");
+        alert($(this).attr("id"));
       });
-
+      $(".mengceng").click(function(){
+        $("#lingForm").css("display","none");
+        $(".mengceng").css("display","none");
+      });
 
       function processNewItems(items) {
         items.each(function() {
