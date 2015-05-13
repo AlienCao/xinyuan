@@ -1,8 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="gb2312" />
-<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title>美丽嘉兴运河落帆亭书画展</title>
 <meta name="keywords" content="美丽嘉兴运河落帆亭书画展 嘉兴第九区">
 <meta name="description" content="美丽嘉兴运河落帆亭书画展 嘉兴第九区">
@@ -206,36 +205,36 @@ p{
     </div>
     <div class="mengceng" style="z-index:999;"></div>
     <div id="lingForm" style="display: none;width: 90%;margin: auto;position: fixed;left: 0;right: 0;top: 30%;z-index: 1000;">
-      <input type="hidden" value="" id="submitid"/>
-      <form id='form' name='form' enctype='multipart/form-data' method='post' action='http://ide.jx09.com/module/form/content/?mode=&action=post&id=430'>
+      <form id='form' name='form' enctype='multipart/form-data' method='post' action='http://veryide.jx09.com/module/form/content/?mode=&action=post&id=24'>
+          <input type="hidden" value="" id="submitid" name="G-141"/>
           <input type='hidden' value='qb5px5VWS6' name='verify' />
           <div id="main">
               <p>您的姓名：（必填）</p>
-              <input type="text" name='G-1815' id='G-1040'></input>
+              <input type="text" name='G-138' id='G-138'></input>
               <p>您的电话：（必填）</p>
-              <input type="text" name='G-1816' id='G-1040'></input>
+              <input type="text" name='G-139' id='G-139'></input>
               <div id="group-1817" class="radiostyle">
                   <p>
                       信息来源 *
                   </p>
                   <ol style = 'display:inline-flex;'>
                       <li>
-                          <input type='radio' class='radio' name='G-1817' value='947' />嘉论
+                          <input type='radio' class='radio' name='G-140' value='207' />嘉论
                       </li>
                       <li>
-                          <input type='radio' class='radio' name='G-1817' value='948' />19楼
+                          <input type='radio' class='radio' name='G-140' value='208' />19楼
                       </li>
                       <li>
-                          <input type='radio' class='radio' name='G-1817' value='949' />九区
+                          <input type='radio' class='radio' name='G-140' value='209' />九区
                       </li>
                       <li>
-                          <input type='radio' class='radio' name='G-1817' value='947' />论坛甲
+                          <input type='radio' class='radio' name='G-140' value='210' />论坛甲
                       </li>
                       <li>
-                          <input type='radio' class='radio' name='G-1817' value='948' />论坛乙
+                          <input type='radio' class='radio' name='G-140' value='211' />论坛乙
                       </li>
                       <li>
-                          <input type='radio' class='radio' name='G-1817' value='949' />论坛丙
+                          <input type='radio' class='radio' name='G-140' value='212' />论坛丙
                       </li>
                   </ol>
               </div>
@@ -275,7 +274,7 @@ p{
       $(".ling").click(function(){
         $("#lingForm").css("display","block");
         $(".mengceng").css("display","block");
-        alert($(this).attr("id"));
+        $("#submitid").val(($(this).attr("id")));
       });
       $(".mengceng").click(function(){
         $("#lingForm").css("display","none");
